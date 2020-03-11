@@ -1,8 +1,4 @@
-/*
-    Elements: Page
-    ---
-    Default markup for page level elements
-*/
+
 
 /*
     Fonts
@@ -22,18 +18,29 @@
     src: url("../fonts/Inter-Bold.woff2") format("woff2");
 }
 
+/*
+    Elements: Page
+    ---
+    Default markup for page level elements
+*/
+
 html {
     font-size: 16px;
     line-height: 1.5;
     font-family: "droid-serif", Georgia, serif;
     color: #5C6366;
-    padding: 48px 24px 24px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    border-style: inherit;
 }
 
 body {
-    max-width: 42em;
     margin: 0 auto;
 }
 
@@ -178,9 +185,7 @@ a:focus {
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
-    html {
-        padding: 48px 48px 24px;
-    }
+
     h1 {
         font-size: 58px;
         line-height: 64px;
@@ -189,37 +194,101 @@ a:focus {
 
 /* Large devices (landscape tablets, desktops, 992px and up) */
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
 
 @media (min-width: 1200px) {}
 
- /*
-        Components: Author
-    */
+/*
+    Components: Author
+*/
 
+.c-author {
+    display: flex;
+    align-items: center;
+}
+
+.c-author__image {
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    margin-right: 16px;
+}
+
+.c-author__name,
+.c-author__meta {
+    margin-bottom: 0;
+}
+
+.c-author__name {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@media (min-width: 992px) {
     .c-author {
-        display: flex;
-        align-items: center;
+        display: block;
     }
 
     .c-author__image {
-        width: 56px;
-        height: 56px;
-        border-radius: 100%;
-        margin-right: 16px;
+        margin-bottom: 16px;
+    }
+}
+
+/*
+    Components: Article
+*/
+
+.c-article__header,
+.c-article__body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.c-article__header {
+    padding: 24px 24px 0;
+}
+
+.c-article__body {
+    padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+    .c-article__header {
+        padding: 48px 48px 24px;
+    }
+    
+    .c-article__author {
+        padding-bottom: 24px;
     }
 
-    .c-author__name,
-    .c-author__meta {
-        margin-bottom: 0;
+    .c-article__body {
+        padding: 24px 48px;
+    }
+}
+
+@media (min-width: 992px) {
+    .c-article__body {
+        display: flex;
+        flex-wrap: wrap;
     }
 
-    .c-author__name {
-        font-size: 16px;
-        line-height: 24px;
+    .c-article__author {
+        width: 25%;
+        padding-right: 24px;
     }
+
+    .c-article__content {
+        width: 75px;
+    }
+}
+
+.u-max-width-sm {
+    max-width: 36em;
+}
 
 /*
     Print styles.
